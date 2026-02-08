@@ -1,4 +1,4 @@
-package Threads;
+package today;
 
 class A implements Runnable {
     public void run() {
@@ -6,8 +6,8 @@ class A implements Runnable {
             System.out.println("A says hello");
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println(e);
             }
         }
     }
@@ -16,20 +16,20 @@ class A implements Runnable {
 class B implements Runnable {
     public void run() {
         for (int i = 0; i < 10; i++) {
-            System.out.println("B says yes sir");
+            System.out.println("B says hello");
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println(e);
             }
         }
     }
 }
 
-public class Runnable1 {
+public class runnable {
     public static void main(String[] args) {
         A ob = new A();
-        B ob1 = new B(); // these are the runnable objects
+        B ob1 = new B();
 
         Thread t1 = new Thread(ob);
         Thread t2 = new Thread(ob1);
